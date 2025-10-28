@@ -15,12 +15,12 @@ export default function Button({
   className = '',
   type = 'button'
 }: ButtonProps) {
-  const baseStyles = 'px-8 py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105';
+  const baseStyles = 'px-10 py-4 rounded-full font-semibold text-lg transition-all duration-500 transform hover:scale-105 active:scale-95 focus:outline-none focus:ring-4 focus:ring-amber-500/50';
 
   const variants = {
-    primary: 'bg-amber-700 hover:bg-amber-800 text-white shadow-lg hover:shadow-xl',
-    secondary: 'bg-green-700 hover:bg-green-800 text-white shadow-lg hover:shadow-xl',
-    outline: 'border-2 border-amber-700 text-amber-700 hover:bg-amber-700 hover:text-white'
+    primary: 'bg-amber-700 hover:bg-amber-800 text-white shadow-xl hover:shadow-2xl',
+    secondary: 'bg-green-700 hover:bg-green-800 text-white shadow-xl hover:shadow-2xl',
+    outline: 'border-3 border-amber-700 text-amber-700 hover:bg-amber-700 hover:text-white hover:border-amber-700 shadow-lg hover:shadow-xl'
   };
 
   return (

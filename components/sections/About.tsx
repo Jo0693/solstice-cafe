@@ -1,41 +1,56 @@
+'use client';
+
 import SectionWrapper from '@/components/ui/SectionWrapper';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 
 export default function About() {
   return (
     <SectionWrapper id="about" background="light">
-      <div className="grid md:grid-cols-2 gap-12 items-center">
-        {/* Image à gauche */}
-        <div className="relative h-[400px] md:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
+      <div className="grid md:grid-cols-2 gap-16 items-center">
+        {/* Image on the left */}
+        <motion.div
+          className="relative h-[450px] md:h-[550px] rounded-3xl overflow-hidden shadow-2xl group"
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
           <Image
             src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?q=80&w=2078"
-            alt="Solstice Café interior"
+            alt="Solstice Café interior with warm lighting and tropical ambiance"
             fill
-            className="object-cover"
+            className="object-cover transition-transform duration-700 group-hover:scale-105"
           />
-        </div>
+        </motion.div>
 
-        {/* Texte à droite */}
-        <div className="space-y-6">
-          <h2 className="text-4xl md:text-5xl font-serif font-bold text-amber-900">
-            Our Story
-          </h2>
-          <div className="w-20 h-1 bg-amber-700"></div>
-          <p className="text-lg text-stone-700 leading-relaxed">
-            Nestled in the heart of Canggu, Solstice Café brings together the rich coffee traditions
-            of Bali with modern artisan techniques. Every cup tells a story of local farmers,
-            sustainable practices, and passionate craftsmanship.
+        {/* Text on the right */}
+        <motion.div
+          className="space-y-8"
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+        >
+          <div>
+            <h2 className="text-5xl md:text-6xl font-serif font-bold text-amber-900 mb-5 leading-tight">
+              Our Story
+            </h2>
+            <div className="w-24 h-1.5 bg-amber-700 rounded-full"></div>
+          </div>
+
+          <p className="text-lg md:text-xl text-stone-700 leading-relaxed">
+            Right in the heart of Canggu, Solstice Café is where Bali's rich coffee heritage meets modern brewing artistry. Every cup we serve is a celebration of local farmers, sustainable sourcing, and the craft that goes into each pour.
           </p>
-          <p className="text-lg text-stone-700 leading-relaxed">
-            We source our beans from the volcanic highlands of Kintamani, where the fertile soil
-            and tropical climate create the perfect conditions for exceptional coffee. Our baristas
-            are trained in both traditional Balinese brewing methods and contemporary specialty coffee techniques.
+
+          <p className="text-lg md:text-xl text-stone-700 leading-relaxed">
+            Our beans come straight from the volcanic highlands of Kintamani—where fertile soil and perfect tropical weather create coffee like nowhere else. We train our baristas in traditional Balinese methods alongside cutting-edge specialty techniques, so you get the best of both worlds.
           </p>
-          <p className="text-lg text-stone-700 leading-relaxed">
-            More than just a café, Solstice is a community hub where surfers, digital nomads,
-            and locals gather to share stories, work, and enjoy the island's laid-back lifestyle.
+
+          <p className="text-lg md:text-xl text-stone-700 leading-relaxed">
+            But Solstice is more than just great coffee. It's a space where surfers grab their morning brew, digital nomads settle in with their laptops, and locals catch up over a latte. It's the kind of place that feels like home.
           </p>
-        </div>
+        </motion.div>
       </div>
     </SectionWrapper>
   );

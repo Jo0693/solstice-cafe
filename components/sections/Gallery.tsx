@@ -6,60 +6,68 @@ import { motion } from 'framer-motion';
 const galleryImages = [
   {
     url: 'https://images.unsplash.com/photo-1445116572660-236099ec97a0?q=80&w=2071',
-    alt: 'Barista preparing coffee'
+    alt: 'Barista crafting the perfect pour'
   },
   {
     url: 'https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=2074',
-    alt: 'Latte art masterpiece'
+    alt: 'Beautiful latte art detail'
   },
   {
     url: 'https://images.unsplash.com/photo-1559056199-641a0ac8b55e?q=80&w=2070',
-    alt: 'Café tropical ambiance'
+    alt: 'Tropical café vibes'
   },
   {
     url: 'https://images.unsplash.com/photo-1442512595331-e89e73853f31?q=80&w=2070',
-    alt: 'Fresh coffee beans'
+    alt: 'Freshly roasted beans'
   },
   {
     url: 'https://images.unsplash.com/photo-1521017432531-fbd92d768814?q=80&w=2070',
-    alt: 'Cozy café interior'
+    alt: 'Cozy corner seating'
   },
   {
     url: 'https://images.unsplash.com/photo-1497935586351-b67a49e012bf?q=80&w=2071',
-    alt: 'Outdoor seating area'
+    alt: 'Outdoor terrace view'
   }
 ];
 
 export default function Gallery() {
   return (
     <SectionWrapper id="gallery" background="light">
-      <div className="text-center mb-16">
-        <h2 className="text-4xl md:text-5xl font-serif font-bold text-amber-900 mb-4">
-          Gallery
+      <motion.div
+        className="text-center mb-20"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
+        <h2 className="text-5xl md:text-6xl font-serif font-bold text-amber-900 mb-5">
+          Moments
         </h2>
-        <div className="w-20 h-1 bg-amber-700 mx-auto mb-6"></div>
-        <p className="text-lg text-stone-600 max-w-2xl mx-auto">
-          A glimpse into our daily moments of coffee craftsmanship and tropical vibes.
+        <div className="w-24 h-1.5 bg-amber-700 mx-auto mb-8 rounded-full"></div>
+        <p className="text-xl md:text-2xl text-stone-600 max-w-3xl mx-auto leading-relaxed">
+          A peek into our world—where coffee meets craft, and every day brings something beautiful.
         </p>
-      </div>
+      </motion.div>
 
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
         {galleryImages.map((image, index) => (
           <motion.div
             key={index}
-            className="relative h-64 md:h-80 rounded-xl overflow-hidden group cursor-pointer shadow-lg"
-            initial={{ opacity: 0, scale: 0.9 }}
+            className="relative h-72 md:h-96 rounded-3xl overflow-hidden group cursor-pointer shadow-xl"
+            initial={{ opacity: 0, scale: 0.85 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
+            whileHover={{ scale: 1.03, transition: { duration: 0.3 } }}
           >
             <div
-              className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+              className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110 group-hover:rotate-1"
               style={{ backgroundImage: `url('${image.url}')` }}
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-              <p className="text-white font-medium">{image.alt}</p>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-end p-6">
+              <p className="text-white font-medium text-lg transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                {image.alt}
+              </p>
             </div>
           </motion.div>
         ))}
