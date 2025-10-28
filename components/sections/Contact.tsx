@@ -27,7 +27,7 @@ export default function Contact() {
 
     // Form submission simulation
     setTimeout(() => {
-      setSubmitMessage('Thanks for reaching out! We'll be in touch soon.');
+      setSubmitMessage("Thanks for reaching out! We'll be in touch soon.");
       setIsSubmitting(false);
       setFormData({ name: '', email: '', message: '' });
 
