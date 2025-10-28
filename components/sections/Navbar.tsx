@@ -2,10 +2,12 @@
 
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { locale, setLocale } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -52,8 +54,8 @@ export default function Navbar() {
             Solstice
           </button>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-8">
+          {/* Desktop Navigation + Language Switch */}
+          <div className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
               <button
                 key={link.id}
@@ -67,6 +69,34 @@ export default function Navbar() {
                 {link.name}
               </button>
             ))}
+
+            {/* Language Toggle */}
+            <div className="flex gap-2 ml-4 pl-4 border-l-2 border-amber-700/30">
+              <button
+                onClick={() => setLocale('en')}
+                className={`px-3 py-1 rounded-full text-sm font-semibold transition-all ${
+                  locale === 'en'
+                    ? 'bg-amber-700 text-white'
+                    : isScrolled
+                    ? 'text-stone-600 hover:bg-amber-100'
+                    : 'text-white hover:bg-white/20'
+                }`}
+              >
+                EN
+              </button>
+              <button
+                onClick={() => setLocale('fr')}
+                className={`px-3 py-1 rounded-full text-sm font-semibold transition-all ${
+                  locale === 'fr'
+                    ? 'bg-amber-700 text-white'
+                    : isScrolled
+                    ? 'text-stone-600 hover:bg-amber-100'
+                    : 'text-white hover:bg-white/20'
+                }`}
+              >
+                FR
+              </button>
+            </div>
           </div>
 
           {/* Mobile Menu Button */}
@@ -112,6 +142,30 @@ export default function Navbar() {
                 {link.name}
               </button>
             ))}
+
+            {/* Mobile Language Toggle */}
+            <div className="flex gap-2 px-4 pt-4 mt-2 border-t border-stone-200">
+              <button
+                onClick={() => setLocale('en')}
+                className={`flex-1 px-3 py-2 rounded-lg text-sm font-semibold transition-all ${
+                  locale === 'en'
+                    ? 'bg-amber-700 text-white'
+                    : 'text-stone-600 hover:bg-amber-100'
+                }`}
+              >
+                English
+              </button>
+              <button
+                onClick={() => setLocale('fr')}
+                className={`flex-1 px-3 py-2 rounded-lg text-sm font-semibold transition-all ${
+                  locale === 'fr'
+                    ? 'bg-amber-700 text-white'
+                    : 'text-stone-600 hover:bg-amber-100'
+                }`}
+              >
+                Français
+              </button>
+            </div>
           </motion.div>
         )}
       </div>
