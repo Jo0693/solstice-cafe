@@ -2,35 +2,37 @@
 
 import SectionWrapper from '@/components/ui/SectionWrapper';
 import { motion } from 'framer-motion';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const galleryImages = [
   {
     url: 'https://images.unsplash.com/photo-1445116572660-236099ec97a0?q=80&w=2071',
-    alt: 'Barista crafting the perfect pour'
+    altKey: 'gallery_img1'
   },
   {
     url: 'https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=2074',
-    alt: 'Beautiful latte art detail'
+    altKey: 'gallery_img2'
   },
   {
     url: 'https://images.unsplash.com/photo-1559056199-641a0ac8b55e?q=80&w=2070',
-    alt: 'Tropical café vibes'
+    altKey: 'gallery_img3'
   },
   {
     url: 'https://images.unsplash.com/photo-1442512595331-e89e73853f31?q=80&w=2070',
-    alt: 'Freshly roasted beans'
+    altKey: 'gallery_img4'
   },
   {
     url: 'https://images.unsplash.com/photo-1521017432531-fbd92d768814?q=80&w=2070',
-    alt: 'Cozy corner seating'
+    altKey: 'gallery_img5'
   },
   {
     url: 'https://images.unsplash.com/photo-1497935586351-b67a49e012bf?q=80&w=2071',
-    alt: 'Outdoor terrace view'
+    altKey: 'gallery_img6'
   }
 ];
 
 export default function Gallery() {
+  const { t } = useLanguage();
   return (
     <SectionWrapper id="gallery" background="light">
       <motion.div
@@ -41,11 +43,11 @@ export default function Gallery() {
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
         <h2 className="text-5xl md:text-6xl font-serif font-bold text-amber-900 mb-5">
-          Moments
+          {t.gallery_title}
         </h2>
         <div className="w-24 h-1.5 bg-amber-700 mx-auto mb-8 rounded-full"></div>
         <p className="text-xl md:text-2xl text-stone-600 max-w-3xl mx-auto leading-relaxed">
-          A peek into our world—where coffee meets craft, and every day brings something beautiful.
+          {t.gallery_subtitle}
         </p>
       </motion.div>
 
@@ -66,7 +68,7 @@ export default function Gallery() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-end p-6">
               <p className="text-white font-medium text-lg transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                {image.alt}
+                {t[image.altKey as keyof typeof t]}
               </p>
             </div>
           </motion.div>

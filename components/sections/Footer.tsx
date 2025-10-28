@@ -1,4 +1,9 @@
+'use client';
+
+import { useLanguage } from '@/contexts/LanguageContext';
+
 export default function Footer() {
+  const { t } = useLanguage();
   return (
     <footer className="bg-stone-900 text-stone-300 py-16">
       <div className="max-w-7xl mx-auto px-6">
@@ -7,32 +12,32 @@ export default function Footer() {
           <div>
             <h3 className="font-serif text-3xl text-amber-500 mb-5">Solstice Café</h3>
             <p className="text-stone-400 leading-relaxed">
-              Specialty coffee right in the heart of Canggu. Where island vibes meet exceptional brews.
+              {t.footer_tagline}
             </p>
           </div>
 
           {/* Navigation */}
           <div>
-            <h4 className="font-semibold text-white text-lg mb-5">Quick Links</h4>
+            <h4 className="font-semibold text-white text-lg mb-5">{t.footer_links}</h4>
             <ul className="space-y-3">
               <li>
                 <a href="#about" className="text-stone-400 hover:text-amber-500 transition-colors duration-300">
-                  About Us
+                  {t.footer_about}
                 </a>
               </li>
               <li>
                 <a href="#menu" className="text-stone-400 hover:text-amber-500 transition-colors duration-300">
-                  Menu
+                  {t.footer_menu}
                 </a>
               </li>
               <li>
                 <a href="#gallery" className="text-stone-400 hover:text-amber-500 transition-colors duration-300">
-                  Moments
+                  {t.footer_gallery}
                 </a>
               </li>
               <li>
                 <a href="#contact" className="text-stone-400 hover:text-amber-500 transition-colors duration-300">
-                  Contact
+                  {t.footer_contact}
                 </a>
               </li>
             </ul>
@@ -40,7 +45,7 @@ export default function Footer() {
 
           {/* Social media */}
           <div>
-            <h4 className="font-semibold text-white text-lg mb-5">Follow Along</h4>
+            <h4 className="font-semibold text-white text-lg mb-5">{t.footer_follow}</h4>
             <div className="flex space-x-4">
               <a
                 href="https://instagram.com"
@@ -81,9 +86,9 @@ export default function Footer() {
 
         {/* Copyright */}
         <div className="border-t border-stone-800 pt-10 text-center text-stone-500">
-          <p>&copy; {new Date().getFullYear()} Solstice Café. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} {t.footer_copyright}</p>
           <p className="mt-3">
-            Crafted with care by{' '}
+            {t.footer_created}{' '}
             <span className="text-amber-500 font-medium">Got You Website</span>
           </p>
         </div>

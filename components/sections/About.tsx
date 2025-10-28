@@ -3,8 +3,10 @@
 import SectionWrapper from '@/components/ui/SectionWrapper';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function About() {
+  const { t } = useLanguage();
   return (
     <SectionWrapper id="about" background="light">
       <div className="grid md:grid-cols-2 gap-16 items-center">
@@ -34,21 +36,21 @@ export default function About() {
         >
           <div>
             <h2 className="text-5xl md:text-6xl font-serif font-bold text-amber-900 mb-5 leading-tight">
-              Our Story
+              {t.about_title}
             </h2>
             <div className="w-24 h-1.5 bg-amber-700 rounded-full"></div>
           </div>
 
           <p className="text-lg md:text-xl text-stone-700 leading-relaxed">
-            Right in the heart of Canggu, Solstice Café is where Bali's rich coffee heritage meets modern brewing artistry. Every cup we serve is a celebration of local farmers, sustainable sourcing, and the craft that goes into each pour.
+            {t.about_p1}
           </p>
 
           <p className="text-lg md:text-xl text-stone-700 leading-relaxed">
-            Our beans come straight from the volcanic highlands of Kintamani—where fertile soil and perfect tropical weather create coffee like nowhere else. We train our baristas in traditional Balinese methods alongside cutting-edge specialty techniques, so you get the best of both worlds.
+            {t.about_p2}
           </p>
 
           <p className="text-lg md:text-xl text-stone-700 leading-relaxed">
-            But Solstice is more than just great coffee. It's a space where surfers grab their morning brew, digital nomads settle in with their laptops, and locals catch up over a latte. It's the kind of place that feels like home.
+            {t.about_p3}
           </p>
         </motion.div>
       </div>

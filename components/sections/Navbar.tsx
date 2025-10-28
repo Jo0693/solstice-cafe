@@ -7,7 +7,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const { locale, setLocale } = useLanguage();
+  const { locale, setLocale, t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,10 +25,10 @@ export default function Navbar() {
   };
 
   const navLinks = [
-    { name: 'About', id: 'about' },
-    { name: 'Menu', id: 'menu' },
-    { name: 'Gallery', id: 'gallery' },
-    { name: 'Contact', id: 'contact' }
+    { name: t.nav_about, id: 'about' },
+    { name: t.nav_menu, id: 'menu' },
+    { name: t.nav_gallery, id: 'gallery' },
+    { name: t.nav_contact, id: 'contact' }
   ];
 
   return (

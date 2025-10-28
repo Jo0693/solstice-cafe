@@ -4,8 +4,10 @@ import { useState } from 'react';
 import SectionWrapper from '@/components/ui/SectionWrapper';
 import Button from '@/components/ui/Button';
 import { motion } from 'framer-motion';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function Contact() {
+  const { t } = useLanguage();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -27,7 +29,7 @@ export default function Contact() {
 
     // Form submission simulation
     setTimeout(() => {
-      setSubmitMessage("Thanks for reaching out! We'll be in touch soon.");
+      setSubmitMessage(t.contact_success);
       setIsSubmitting(false);
       setFormData({ name: '', email: '', message: '' });
 
@@ -46,17 +48,17 @@ export default function Contact() {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <h2 className="text-5xl md:text-6xl font-serif font-bold text-amber-900 mb-5">
-            Say Hello
+            {t.contact_title}
           </h2>
           <div className="w-24 h-1.5 bg-amber-700 mb-8 rounded-full"></div>
           <p className="text-xl text-stone-600 mb-10 leading-relaxed">
-            Got a question? Want to book a table? Just feel like chatting about coffee? Drop us a line—we'd love to hear from you.
+            {t.contact_subtitle}
           </p>
 
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
               <label htmlFor="name" className="block text-sm font-semibold text-stone-700 mb-2">
-                Name
+                {t.contact_name}
               </label>
               <input
                 type="text"
@@ -66,13 +68,13 @@ export default function Contact() {
                 onChange={handleChange}
                 required
                 className="w-full px-5 py-4 border-2 border-stone-200 rounded-xl focus:ring-2 focus:ring-amber-600 focus:border-amber-600 transition-all duration-300 outline-none"
-                placeholder="Your name"
+                placeholder={t.contact_name_placeholder}
               />
             </div>
 
             <div>
               <label htmlFor="email" className="block text-sm font-semibold text-stone-700 mb-2">
-                Email
+                {t.contact_email}
               </label>
               <input
                 type="email"
@@ -82,13 +84,13 @@ export default function Contact() {
                 onChange={handleChange}
                 required
                 className="w-full px-5 py-4 border-2 border-stone-200 rounded-xl focus:ring-2 focus:ring-amber-600 focus:border-amber-600 transition-all duration-300 outline-none"
-                placeholder="your@email.com"
+                placeholder={t.contact_email_placeholder}
               />
             </div>
 
             <div>
               <label htmlFor="message" className="block text-sm font-semibold text-stone-700 mb-2">
-                Message
+                {t.contact_message}
               </label>
               <textarea
                 id="message"
@@ -98,12 +100,12 @@ export default function Contact() {
                 required
                 rows={5}
                 className="w-full px-5 py-4 border-2 border-stone-200 rounded-xl focus:ring-2 focus:ring-amber-600 focus:border-amber-600 transition-all duration-300 resize-none outline-none"
-                placeholder="Tell us what's on your mind..."
+                placeholder={t.contact_message_placeholder}
               />
             </div>
 
             <Button type="submit" variant="primary" className={`w-full sm:w-auto ${isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}`}>
-              {isSubmitting ? 'Sending...' : 'Send Message'}
+              {isSubmitting ? t.contact_sending : t.contact_send}
             </Button>
 
             {submitMessage && (
@@ -128,7 +130,7 @@ export default function Contact() {
         >
           <div>
             <h3 className="text-3xl font-serif font-bold text-amber-900 mb-6">
-              Come Visit
+              {t.contact_visit}
             </h3>
             <div className="space-y-5 text-stone-700">
               <p className="flex items-start text-lg">
@@ -136,7 +138,7 @@ export default function Contact() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
-                <span>Jl. Pantai Batu Bolong No.88<br />Canggu, Bali 80361</span>
+                <span dangerouslySetInnerHTML={{ __html: t.contact_address.replace(/\n/g, '<br />') }} />
               </p>
               <p className="flex items-center text-lg">
                 <svg className="w-7 h-7 mr-4 text-amber-700 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -148,7 +150,7 @@ export default function Contact() {
                 <svg className="w-7 h-7 mr-4 text-amber-700 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-                Daily: 7:00 AM – 6:00 PM
+                {t.contact_hours}
               </p>
             </div>
           </div>
