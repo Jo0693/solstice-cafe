@@ -38,7 +38,7 @@ export default function Contact() {
   };
 
   return (
-    <SectionWrapper id="contact" background="transparent">
+    <SectionWrapper id="contact" background="transparent" data-publisher-section="contact">
       <div className="grid md:grid-cols-2 gap-16">
         {/* Form */}
         <motion.div
@@ -47,11 +47,11 @@ export default function Contact() {
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <h2 className="text-5xl md:text-6xl font-serif font-bold text-amber-900 mb-5">
+          <h2 data-publisher-field="contact.title" className="text-5xl md:text-6xl font-serif font-bold text-amber-900 mb-5">
             {t.contact_title}
           </h2>
           <div className="w-24 h-1.5 bg-amber-700 mb-8 rounded-full"></div>
-          <p className="text-xl text-stone-600 mb-10 leading-relaxed">
+          <p data-publisher-field="contact.subtitle" className="text-xl text-stone-600 mb-10 leading-relaxed">
             {t.contact_subtitle}
           </p>
 

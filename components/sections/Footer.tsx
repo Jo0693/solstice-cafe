@@ -5,13 +5,13 @@ import { useLanguage } from '@/contexts/LanguageContext';
 export default function Footer() {
   const { t } = useLanguage();
   return (
-    <footer className="bg-stone-900 text-stone-300 py-16">
+    <footer data-publisher-section="footer" className="bg-stone-900 text-stone-300 py-16">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid md:grid-cols-3 gap-12 mb-12">
           {/* Logo and description */}
           <div>
             <h3 className="font-serif text-3xl text-amber-500 mb-5">Solstice Café</h3>
-            <p className="text-stone-400 leading-relaxed">
+            <p data-publisher-field="footer.tagline" className="text-stone-400 leading-relaxed">
               {t.footer_tagline}
             </p>
           </div>
@@ -86,7 +86,7 @@ export default function Footer() {
 
         {/* Copyright */}
         <div className="border-t border-stone-800 pt-10 text-center text-stone-500">
-          <p>&copy; {new Date().getFullYear()} {t.footer_copyright}</p>
+          <p data-publisher-field="footer.copyright">&copy; {new Date().getFullYear()} {t.footer_copyright}</p>
           <p className="mt-3">
             {t.footer_created}{' '}
             <span className="text-amber-500 font-medium">Got You Website</span>

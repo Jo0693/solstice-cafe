@@ -34,7 +34,7 @@ const galleryImages = [
 export default function Gallery() {
   const { t } = useLanguage();
   return (
-    <SectionWrapper id="gallery" background="light">
+    <SectionWrapper id="gallery" background="light" data-publisher-section="gallery">
       <motion.div
         className="text-center mb-20"
         initial={{ opacity: 0, y: 30 }}
@@ -42,11 +42,11 @@ export default function Gallery() {
         viewport={{ once: true }}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
-        <h2 className="text-5xl md:text-6xl font-serif font-bold text-amber-900 mb-5">
+        <h2 data-publisher-field="gallery.title" className="text-5xl md:text-6xl font-serif font-bold text-amber-900 mb-5">
           {t.gallery_title}
         </h2>
         <div className="w-24 h-1.5 bg-amber-700 mx-auto mb-8 rounded-full"></div>
-        <p className="text-xl md:text-2xl text-stone-600 max-w-3xl mx-auto leading-relaxed">
+        <p data-publisher-field="gallery.subtitle" className="text-xl md:text-2xl text-stone-600 max-w-3xl mx-auto leading-relaxed">
           {t.gallery_subtitle}
         </p>
       </motion.div>

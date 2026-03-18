@@ -8,7 +8,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 export default function About() {
   const { t } = useLanguage();
   return (
-    <SectionWrapper id="about" background="light">
+    <SectionWrapper id="about" background="light" data-publisher-section="about">
       <div className="grid md:grid-cols-2 gap-16 items-center">
         {/* Image on the left */}
         <motion.div
@@ -35,21 +35,21 @@ export default function About() {
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
         >
           <div>
-            <h2 className="text-5xl md:text-6xl font-serif font-bold text-amber-900 mb-5 leading-tight">
+            <h2 data-publisher-field="about.title" className="text-5xl md:text-6xl font-serif font-bold text-amber-900 mb-5 leading-tight">
               {t.about_title}
             </h2>
             <div className="w-24 h-1.5 bg-amber-700 rounded-full"></div>
           </div>
 
-          <p className="text-lg md:text-xl text-stone-700 leading-relaxed">
+          <p data-publisher-field="about.p1" className="text-lg md:text-xl text-stone-700 leading-relaxed">
             {t.about_p1}
           </p>
 
-          <p className="text-lg md:text-xl text-stone-700 leading-relaxed">
+          <p data-publisher-field="about.p2" className="text-lg md:text-xl text-stone-700 leading-relaxed">
             {t.about_p2}
           </p>
 
-          <p className="text-lg md:text-xl text-stone-700 leading-relaxed">
+          <p data-publisher-field="about.p3" className="text-lg md:text-xl text-stone-700 leading-relaxed">
             {t.about_p3}
           </p>
         </motion.div>

@@ -9,13 +9,15 @@ interface SectionWrapperProps {
   id?: string;
   className?: string;
   background?: 'light' | 'dark' | 'transparent';
+  'data-publisher-section'?: string;
 }
 
 export default function SectionWrapper({
   children,
   id,
   className = '',
-  background = 'transparent'
+  background = 'transparent',
+  'data-publisher-section': publisherSection,
 }: SectionWrapperProps) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
@@ -31,6 +33,7 @@ export default function SectionWrapper({
       ref={ref}
       id={id}
       className={`py-20 px-6 ${backgrounds[background]} ${className}`}
+      data-publisher-section={publisherSection}
       initial={{ opacity: 0, y: 50 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
