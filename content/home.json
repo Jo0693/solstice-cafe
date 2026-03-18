@@ -1,0 +1,148 @@
+{
+  "fr": {
+    "hero": {
+      "title": "Solstice Café",
+      "subtitle": "Café d'Exception au Cœur de Canggu",
+      "cta": "Découvrir la Carte",
+      "image": "",
+      "image_alt": ""
+    },
+    "nav": {
+      "about": "À Propos",
+      "menu": "Menu",
+      "gallery": "Galerie",
+      "contact": "Contact"
+    },
+    "about": {
+      "title": "Notre Histoire",
+      "p1": "Au cœur de Canggu, Solstice Café marie l'héritage caféier balinais avec l'art moderne du café. Chaque tasse que nous servons célèbre nos producteurs locaux, l'approvisionnement durable et le savoir-faire artisanal qui se cache derrière chaque extraction.",
+      "p2": "Nos grains proviennent directement des hauts plateaux volcaniques de Kintamani, où un sol fertile et un climat tropical parfait créent un café unique au monde. Nous formons nos baristas aux méthodes traditionnelles balinaises ainsi qu'aux techniques modernes de café de spécialité, pour vous offrir le meilleur des deux mondes.",
+      "p3": "Mais Solstice, c'est bien plus qu'un excellent café. C'est un lieu où les surfeurs prennent leur dose matinale, où les nomades numériques s'installent avec leurs ordis, et où les locaux se retrouvent autour d'un latte. Un endroit qui fait vraiment chez-soi.",
+      "image": "",
+      "image_alt": ""
+    },
+    "menu": {
+      "title": "Notre Carte",
+      "subtitle": "Chaque boisson raconte une histoire. Préparée avec soin, servie avec amour.",
+      "items": [
+        {"name": "Cold Brew de Kintamani", "description": "Cold brew soyeux à base de grains single-origin de Kintamani—votre compagnon idéal pour les après-midis ensoleillés de Bali", "price": "45K", "image": "", "image_alt": ""},
+        {"name": "Latte Coco", "description": "Espresso intense rencontre lait de coco crémeux, sublimé par une touche de sucre de palme local pour une douceur authentique", "price": "52K", "image": "", "image_alt": ""},
+        {"name": "Café Épicé Balinais", "description": "Notre blend maison traditionnel infusé à la cannelle, cardamome et épices aromatiques des marchés locaux", "price": "48K", "image": "", "image_alt": ""},
+        {"name": "Bowl Açaí Smoothie", "description": "Base açaí bio garnie de fruits tropicaux frais, granola croquant et copeaux de noix de coco grillée", "price": "65K", "image": "", "image_alt": ""}
+      ]
+    },
+    "gallery": {
+      "title": "Nos Moments",
+      "subtitle": "Un aperçu de notre univers—où le café rencontre l'artisanat, et chaque jour apporte quelque chose de beau.",
+      "images": [
+        {"alt": "Barista en pleine extraction", "image": "", "image_alt": ""},
+        {"alt": "Détail du latte art", "image": "", "image_alt": ""},
+        {"alt": "Ambiance café tropicale", "image": "", "image_alt": ""},
+        {"alt": "Grains fraîchement torréfiés", "image": "", "image_alt": ""},
+        {"alt": "Coin cosy et chaleureux", "image": "", "image_alt": ""},
+        {"alt": "Vue sur la terrasse", "image": "", "image_alt": ""}
+      ]
+    },
+    "contact": {
+      "title": "Dites Bonjour",
+      "subtitle": "Une question ? Envie de réserver une table ? Juste l'envie de parler café ? Écrivez-nous—on serait ravis de vous lire.",
+      "name_label": "Nom",
+      "name_placeholder": "Votre nom",
+      "email_label": "Email",
+      "email_placeholder": "votre@email.com",
+      "message_label": "Message",
+      "message_placeholder": "Parlez-nous de vous...",
+      "send": "Envoyer",
+      "sending": "Envoi...",
+      "success": "Merci pour votre message ! On vous recontacte très vite.",
+      "visit": "Venez Nous Voir",
+      "address": "Jl. Pantai Batu Bolong No.88\nCanggu, Bali 80361",
+      "email": "hello@solsticecafe.com",
+      "hours": "Tous les jours : 7h00 – 18h00"
+    },
+    "footer": {
+      "tagline": "Café de spécialité au cœur de Canggu. Où l'ambiance tropicale rencontre l'excellence.",
+      "links": "Liens Rapides",
+      "about": "À Propos",
+      "menu": "Menu",
+      "gallery": "Moments",
+      "contact": "Contact",
+      "follow": "Suivez-Nous",
+      "copyright": "Solstice Café. Tous droits réservés.",
+      "created": "Créé avec soin par"
+    }
+  },
+  "en": {
+    "hero": {
+      "title": "Solstice Café",
+      "subtitle": "Specialty Coffee in the Heart of Canggu",
+      "cta": "Explore Our Menu",
+      "image": "",
+      "image_alt": ""
+    },
+    "nav": {
+      "about": "About",
+      "menu": "Menu",
+      "gallery": "Gallery",
+      "contact": "Contact"
+    },
+    "about": {
+      "title": "Our Story",
+      "p1": "Right in the heart of Canggu, Solstice Café is where Bali's rich coffee heritage meets modern brewing artistry. Every cup we serve is a celebration of local farmers, sustainable sourcing, and the craft that goes into each pour.",
+      "p2": "Our beans come straight from the volcanic highlands of Kintamani—where fertile soil and perfect tropical weather create coffee like nowhere else. We train our baristas in traditional Balinese methods alongside cutting-edge specialty techniques, so you get the best of both worlds.",
+      "p3": "But Solstice is more than just great coffee. It's a space where surfers grab their morning brew, digital nomads settle in with their laptops, and locals catch up over a latte. It's the kind of place that feels like home.",
+      "image": "",
+      "image_alt": ""
+    },
+    "menu": {
+      "title": "Our Menu",
+      "subtitle": "Every drink tells a story. Crafted with care, served with love.",
+      "items": [
+        {"name": "Kintamani Cold Brew", "description": "Silky-smooth cold brew from single-origin Kintamani beans—your perfect companion for those warm Bali afternoons", "price": "45K", "image": "", "image_alt": ""},
+        {"name": "Coconut Latte", "description": "Rich espresso meets creamy coconut milk, finished with a touch of local palm sugar for that authentic island sweetness", "price": "52K", "image": "", "image_alt": ""},
+        {"name": "Balinese Spiced Coffee", "description": "Our traditional house blend infused with cinnamon, cardamom, and aromatic spices from the local markets", "price": "48K", "image": "", "image_alt": ""},
+        {"name": "Açaí Smoothie Bowl", "description": "Organic açaí base loaded with fresh tropical fruits, crunchy granola, and toasted coconut flakes", "price": "65K", "image": "", "image_alt": ""}
+      ]
+    },
+    "gallery": {
+      "title": "Moments",
+      "subtitle": "A peek into our world—where coffee meets craft, and every day brings something beautiful.",
+      "images": [
+        {"alt": "Barista crafting the perfect pour", "image": "", "image_alt": ""},
+        {"alt": "Beautiful latte art detail", "image": "", "image_alt": ""},
+        {"alt": "Tropical café vibes", "image": "", "image_alt": ""},
+        {"alt": "Freshly roasted beans", "image": "", "image_alt": ""},
+        {"alt": "Cozy corner seating", "image": "", "image_alt": ""},
+        {"alt": "Outdoor terrace view", "image": "", "image_alt": ""}
+      ]
+    },
+    "contact": {
+      "title": "Say Hello",
+      "subtitle": "Got a question? Want to book a table? Just feel like chatting about coffee? Drop us a line—we'd love to hear from you.",
+      "name_label": "Name",
+      "name_placeholder": "Your name",
+      "email_label": "Email",
+      "email_placeholder": "your@email.com",
+      "message_label": "Message",
+      "message_placeholder": "Tell us what's on your mind...",
+      "send": "Send Message",
+      "sending": "Sending...",
+      "success": "Thanks for reaching out! We'll be in touch soon.",
+      "visit": "Come Visit",
+      "address": "Jl. Pantai Batu Bolong No.88\nCanggu, Bali 80361",
+      "email": "hello@solsticecafe.com",
+      "hours": "Daily: 7:00 AM – 6:00 PM"
+    },
+    "footer": {
+      "tagline": "Specialty coffee right in the heart of Canggu. Where island vibes meet exceptional brews.",
+      "links": "Quick Links",
+      "about": "About Us",
+      "menu": "Menu",
+      "gallery": "Moments",
+      "contact": "Contact",
+      "follow": "Follow Along",
+      "copyright": "Solstice Café. All rights reserved.",
+      "created": "Crafted with care by"
+    }
+  }
+}

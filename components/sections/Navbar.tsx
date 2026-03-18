@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
 import { useLanguage } from '@/contexts/LanguageContext';
 
@@ -8,6 +9,7 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { locale, setLocale, t } = useLanguage();
+  const router = useRouter();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,6 +35,7 @@ export default function Navbar() {
 
   return (
     <motion.nav
+      data-publisher-section="nav"
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
         isScrolled
           ? 'bg-white/95 backdrop-blur-sm shadow-lg py-4'
@@ -73,7 +76,7 @@ export default function Navbar() {
             {/* Language Toggle */}
             <div className="flex gap-2 ml-4 pl-4 border-l-2 border-amber-700/30">
               <button
-                onClick={() => setLocale('en')}
+                onClick={() => { setLocale('en'); router.push('/en'); }}
                 className={`px-3 py-1 rounded-full text-sm font-semibold transition-all ${
                   locale === 'en'
                     ? 'bg-amber-700 text-white'
@@ -85,7 +88,7 @@ export default function Navbar() {
                 EN
               </button>
               <button
-                onClick={() => setLocale('fr')}
+                onClick={() => { setLocale('fr'); router.push('/fr'); }}
                 className={`px-3 py-1 rounded-full text-sm font-semibold transition-all ${
                   locale === 'fr'
                     ? 'bg-amber-700 text-white'
@@ -146,7 +149,7 @@ export default function Navbar() {
             {/* Mobile Language Toggle */}
             <div className="flex gap-2 px-4 pt-4 mt-2 border-t border-stone-200">
               <button
-                onClick={() => setLocale('en')}
+                onClick={() => { setLocale('en'); router.push('/en'); }}
                 className={`flex-1 px-3 py-2 rounded-lg text-sm font-semibold transition-all ${
                   locale === 'en'
                     ? 'bg-amber-700 text-white'
@@ -156,7 +159,7 @@ export default function Navbar() {
                 English
               </button>
               <button
-                onClick={() => setLocale('fr')}
+                onClick={() => { setLocale('fr'); router.push('/fr'); }}
                 className={`flex-1 px-3 py-2 rounded-lg text-sm font-semibold transition-all ${
                   locale === 'fr'
                     ? 'bg-amber-700 text-white'

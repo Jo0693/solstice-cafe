@@ -1,0 +1,22 @@
+{
+  "projet": "Solstice Café",
+  "version": "1.0",
+  "pages": [
+    {"id": "home", "nom": "Accueil", "route": "/", "fichier_contenu": "content/home.json", "fichier_seo": "seo/home.seo.json"}
+  ],
+  "design": {
+    "fichier_tokens": "styles/tokens.css",
+    "couleur_primaire": "#B45309",
+    "couleur_secondaire": "#292524",
+    "couleur_accent": "#D97706",
+    "font_principale": "Poppins",
+    "font_secondaire": "Poppins",
+    "fonts_disponibles": ["Poppins"]
+  },
+  "images": {"dossier": "public/"},
+  "i18n": {"actif": true, "langues": ["fr", "en"], "langue_defaut": "fr"},
+  "formulaire": {"service": "resend", "email_destination": "hello@solsticecafe.com"},
+  "analytics": {"provider": "none", "id": ""},
+  "deployment": {"vercel_project": "solstice-cafe", "branch": "main"},
+  "effects": {"fichier_config": "effects.config.json", "runtime_installed": false}
+}

@@ -1,11 +1,18 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import Button from '@/components/ui/Button';
 import { useLanguage } from '@/contexts/LanguageContext';
+import homeContent from '@/content/home.json';
+
+type HomeContent = typeof homeContent;
+type LocaleContent = HomeContent['fr'];
 
 export default function Hero() {
-  const { t } = useLanguage();
+  const { locale, t } = useLanguage();
+  const content = homeContent[locale as keyof HomeContent] as LocaleContent;
+  const heroImage = content.hero.image;
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -13,31 +20,45 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Video with fallback image */}
+    <section data-publisher-section="hero" className="relative h-screen flex items-center justify-center overflow-hidden">
+      {/* Background */}
       <div className="absolute inset-0 z-0">
-        {/* Video Background */}
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover"
-          poster="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=2070"
-        >
-          <source src="/videos/solstice-bg.mp4" type="video/mp4" />
-        </video>
+        {heroImage ? (
+          <Image
+            src={heroImage}
+            alt={content.hero.image_alt || ''}
+            fill
+            className="object-cover"
+            priority
+            data-publisher-field="hero.image"
+          />
+        ) : (
+          <>
+            {/* Video Background */}
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="absolute inset-0 w-full h-full object-cover"
+              poster="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=2070"
+              data-publisher-field="hero.image"
+            >
+              <source src="/videos/solstice-bg.mp4" type="video/mp4" />
+            </video>
 
-        {/* Fallback background image for when video doesn't load */}
-        <motion.div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: "url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=2070')",
-          }}
-          initial={{ scale: 1.1 }}
-          animate={{ scale: 1 }}
-          transition={{ duration: 1.5, ease: "easeOut" }}
-        />
+            {/* Fallback background image for when video doesn't load */}
+            <motion.div
+              className="absolute inset-0 bg-cover bg-center"
+              style={{
+                backgroundImage: "url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=2070')",
+              }}
+              initial={{ scale: 1.1 }}
+              animate={{ scale: 1 }}
+              transition={{ duration: 1.5, ease: "easeOut" }}
+            />
+          </>
+        )}
 
         {/* Dark overlay for text readability */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/60" />
@@ -50,10 +71,10 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, ease: "easeOut" }}
         >
-          <h1 className="font-serif text-6xl md:text-8xl lg:text-9xl font-bold mb-6 tracking-wider drop-shadow-2xl">
+          <h1 data-publisher-field="hero.title" className="font-serif text-6xl md:text-8xl lg:text-9xl font-bold mb-6 tracking-wider drop-shadow-2xl">
             {t.hero_title}
           </h1>
-          <p className="text-xl md:text-3xl font-light mb-10 text-stone-100 tracking-wide">
+          <p data-publisher-field="hero.subtitle" className="text-xl md:text-3xl font-light mb-10 text-stone-100 tracking-wide">
             {t.hero_subtitle}
           </p>
         </motion.div>
@@ -63,7 +84,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, delay: 0.4, ease: "easeOut" }}
         >
-          <Button onClick={() => scrollToSection('menu')} variant="primary">
+          <Button onClick={() => scrollToSection('menu')} variant="primary" data-publisher-field="hero.cta">
             {t.hero_cta}
           </Button>
         </motion.div>
